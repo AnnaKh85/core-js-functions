@@ -34,15 +34,8 @@ function getCurrentFunctionName() {
  */
 
 // FIXME:
-function getFunctionBody(func) {
-  const functionString = func.toString();
-
-  // Extract the body of the function (excluding the function name and parameters)
-  const startIndex = functionString.indexOf('{') + 1;
-  const endIndex = functionString.lastIndexOf('}');
-  const functionBody = functionString.slice(startIndex, endIndex).trim();
-
-  return functionBody;
+function getFunctionBody(/* func */) {
+  throw new Error('Not implemented');
 }
 
 /**
@@ -111,27 +104,8 @@ function getArgumentsCount(funcs) {
  */
 
 // FIXME:
-function getPolynom(...coefficients) {
-  if (coefficients.length === 0) {
-    return null;
-  }
-
-  return function () {
-    let result = '';
-    for (let i = coefficients.length - 1; i >= 0; i -= 1) {
-      if (coefficients[i] !== 0) {
-        if (result !== '') {
-          result += ' + ';
-        }
-        if (i === 0) {
-          result += coefficients[i];
-        } else {
-          result += coefficients[i] + (i === 1 ? '*x' : `*x^${i}`);
-        }
-      }
-    }
-    return `y = ${result}`;
-  };
+function getPolynom() {
+  throw new Error('Not implemented');
 }
 
 /**
